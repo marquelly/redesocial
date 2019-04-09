@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang=’pt-BR’>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>VegFlow</title>
+	<!-- Link para arquivo CSS -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<!-- Cabeçalho -->
+	<div class="container">
+		<header class="row header container-fluid">
+			<div class="col-12">
+				<h1>VegFlow</h1>
+				<button type="button" class="btn btn-light btn-signout">Logout</button>
+			</div>
+		</header>
+		<!-- Principal -->
+		<main class="main">
+			<!-- Perfil -->
+			<section class="profile section-border container">
+				<div class="row">
+					<div class="col-5 col-md-3">
+						<img class="profile-picture" src="images/persona.jpg">
+					</div>
+					<div class="about col-7 col-md-9">
+						<h3 class="profile-name"></h3>
+						<p class="profile-user">@lanafreitas</p>
+						<p class="profile-vegan-type"></p>
+						<hr class="line">
+						<div class="row">
+							<div class="profile-info-item">
+								<p class="info-title">Seguidores:</p>
+								<span class="info-numbers">50</span>
+							</div>
+							<div class="profile-info-item">
+								<p class="info-title">Seguindo:</p>
+								<span class="info-numbers">50</span>
+							</div>
+							<div class="profile-info-item">
+								<p class="info-title">Dias sem carne:</p>
+								<span class="info-numbers">15</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Escrever tweet -->
+			<div class="container">
+				<section class="tweet section-border">
+					<form class="tweet-form">
+						<textarea class="input-post" rows="3" cols="50"
+							placeholder="O que está acontecendo?"></textarea>
+						<select id="private-options">
+							<option value="publico">Publico</option>
+							<option value="privado">Privado</option>
+						</select>
+						<span class="character-counter">140</span>
+						<hr class="line">
+						<button button type="button" class="btn btn-light btn-post">Postar</button>
+					</form>
+				</section>
+			</div>
+			<!-- Feed -->
+			<div class="container">
+				<section class="feed section-border">
+					<div class="feed">
+						<div class="display-content">
+							<h3 class="feed-title">Visualizar:</h3>
+							<button class="filter-button btn-filter-public">Posts Publicos</button>
+							<button class="filter-button btn-filter-private">Posts Privados</button>
+							<button class="filter-button btn-all-posts">Todos os posts</button>
+						</div>
+						<p class="post-list"></p>
+					</div>
+			</div>
+			</section>
+		</main>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="config.js"></script>
+		<script src="main.js"></script>
+		<script src="auth.js"></script>
+	</div>
+</body>
+
+</html>
